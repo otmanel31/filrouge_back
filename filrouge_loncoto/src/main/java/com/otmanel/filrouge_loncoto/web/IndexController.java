@@ -16,7 +16,7 @@ public class IndexController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String redirectToIndex() {
-		return "redirect:/Index";
+		return "redirect:/home";
 	}
 
 	
