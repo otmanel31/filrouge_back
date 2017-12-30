@@ -14,7 +14,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Getter @Setter @NoArgsConstructor @ToString(exclude= {"article", "intervention", "client"})
+@Getter @Setter @NoArgsConstructor @ToString(exclude= {"article", "intervention", "client", "salle"})
 public class Materiel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -26,6 +26,8 @@ public class Materiel {
 	private Article article;
 	@ManyToOne
 	private Client client;
+	@ManyToOne
+	private Salle salle;
 	
 	public Materiel(int id, String serialNumber) {
 		this.id = id;

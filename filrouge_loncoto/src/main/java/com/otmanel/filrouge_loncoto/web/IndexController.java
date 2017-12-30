@@ -19,6 +19,11 @@ public class IndexController {
 		return "redirect:/home";
 	}
 
+	@RequestMapping(value="/home", method=RequestMethod.GET)
+	public String homePage(ModelMap model) {
+		model.addAttribute("hello", "hello world");
+		return "hello word";
+	}
 	
 	@RequestMapping(value = "/Index", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {

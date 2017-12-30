@@ -16,7 +16,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Getter  @Setter @NoArgsConstructor @ToString(exclude= {"family"})
+@Getter  @Setter @NoArgsConstructor @ToString(exclude= {"family", "articles"})
 public class SousFamille {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -24,4 +24,6 @@ public class SousFamille {
 	private String name;
 	@ManyToOne
 	private Famille family;
+	@OneToMany(mappedBy="subfamilly")
+	private Set<Article> articles;
 }
