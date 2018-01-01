@@ -52,7 +52,7 @@ public class InterventionController {
 	}
 	
 	@RequestMapping(value="/interventions/{id:[0-9]+}", method=RequestMethod.GET,
-			produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+			produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public Intervention findById(@PathVariable("id") int id) {
 		Intervention i = interventionDao.findById(id);
